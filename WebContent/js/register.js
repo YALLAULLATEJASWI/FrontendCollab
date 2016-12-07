@@ -1,4 +1,4 @@
-//var app = angular.module('registerApp',[]);
+var app = angular.module('registerApp',[]);
 app.controller('Registercontroller', [ '$scope', '$http', function($scope, $http) {
 	var BASE_URL = 'http://localhost:808/CollabServer';
 console.log("hello");
@@ -8,6 +8,8 @@ console.log("hello");
    
    username : $scope.username,
    mail: $scope.mail,
+   role: $scope.role,
+   status: $scope.status,
    password:$scope.password,
    mobile:$scope.mobile,
    address:$scope.address,
@@ -22,6 +24,8 @@ console.log("hello");
   }).success(function(data, status, headers, config) {
    $scope.username='';
    $scope.mail='';
+   $scope.role='',
+   $scope.status='',
    $scope.password='';
    $scope.mobile='';
    $scope.address='';

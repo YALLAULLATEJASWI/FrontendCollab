@@ -52,10 +52,10 @@ Simple blog front end demo in order to learn AngularJS - You can add new posts, 
 })();*/
 
 
-//var app = angular.module('blogApp',[]);
-app.controller('blogcntrl', [ '$scope', '$http', function($scope, $http) {
+var blogapp = angular.module('blogApp',[]);
+blogapp.controller('blogcntrl', [ '$scope', '$http', function($scope, $http) {
 	var BASE_URL = 'http://localhost:808/CollabServer';
-
+	console.log("blog");
 	$scope.getAllBlogs= function() {
 		console.log("get all blogs")
 		$http({

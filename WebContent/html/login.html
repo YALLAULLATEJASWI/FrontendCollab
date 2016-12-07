@@ -1,58 +1,31 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>AngularJS Simple Login Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      
-  <script type="text/javascript" src="lib/angular.min.js"></script> 
-  <script type="text/javascript" src="lib/angular-route.min.js"></script> 
-  </head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
 
-<body> 
-  
-  
-  <div class="container" >
-  <div class="row">
-    <div class="col-md-12">
-      <div class="page-header">
-       <h1>Login Page</h1> 
-      </div>
-    </div>
-    
-      </div>
-  
-<!--   <script type="text/ng-template" id="login.html"> -->
-    <div class="col-md-12">
-    
-      
-      <form data-ng-submit="formSubmit()" class="form">
-      <div data-ng-app="myApp" data-ng-controller="Logincontroller">
-        <div class="col-md-4">
-          <div class="form-group">
-            <input type="text" class="form-control" data-ng-model="username" placeholder="username" required=""/>
-          </div> 
-          
+<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular-route.min.js"></script>
 
-          <div class="form-group">
-            <input type="password" class="form-control" data-ng-model="password" placeholder="password" required=""/>
-          </div>
 
-          <div class="form-group">
-            <button type="submit" class="btn btn-success">Login</button>
-          
-          </div>
-   
-        </div>
-        {{username}}
-        </div>
-      </form>
-    </div>
-    </div>
-  <script src="js/login.js"></script>  
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/loginservice.js"></script>
+
+</head>
+<body data-ng-app="loginApp">
+<div data-ng-controller="LoginController">
+{{islogged}}</div>
+ <div class="wrapper">
+    <form class="form-signin" action="" data-ng-submit="vm.login()">       
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" data-ng-model="vm.username"/>
+      <input type="password" class="form-control" name="password" placeholder="Password" required="" data-ng-model="vm.password"/>      
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+    </form>
+  </div>
+
 </body>
 </html>

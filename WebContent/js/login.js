@@ -1,30 +1,52 @@
-//var app = angular.module("logApp", []);
+var app = angular.module('loginApp',[]);
+app.controller('LoginController', LoginController);
 
-app.controller('Logincontroller',['$scope','$http' ,function($scope,$http) {
-   
-	var BASE_URL ='http://localhost:808/CollabServer';
-    
-	$scope.users={
-			username : $scope.username,
-			password:$scope.password,
-			
-	}
-		$http({
-			method : 'POST',
-			url : BASE_URL + '/login',
-			data : $scope.users
-		}).success(function(data, status, headers, config) {
-			$scope.username='';
-			$scope.password='';
-			
-		}).error(function(data,status,headers,config){
-			alert("error");
-		});
-}]);
-			
-	
-	
-	/*$scope.username = "";
-      $scope.password = "";
-  
-});*/
+    LoginController.$inject = ['$location',  'AuthenticationService','$rootScope'];
+ console.log("login")
+    function LoginController($location, AuthenticationService,$rootScope) {
+	 console.log("login controller")
+        var vm = this;
+ 
+        vm.login = login;
+        vm.logout = logout;
+
+       /* (function initController() {
+        	console.log("reset")
+            // reset login status
+            AuthenticationService.ClearCredentials();
+        })();*/
+ 
+        function login() {
+           
+            console.log("login func")
+             AuthenticationService.Login(vm.username, vm.password, function (response) {	 
+                if (response.success) {
+               console.log("setcred")
+               $rootScope.username=vm.username;
+              $rootScope.islogged=true;
+                	AuthenticationService.SetCredentials(vm.username, vm.password);
+                    $location.path('/Index1');
+                  $rootScope.islogged=true;
+                	
+                } else {
+                	console.log("error")
+                  //  FlashService.Error(response.message);
+                	
+                    alert("error")
+                }
+            });
+        };
+        function logout(){
+        	console.log("logout")
+        	AuthenticationService.Logout(function(response){
+        		if(response.success){
+        			AuthenticationService.ClearCredentials();
+        			$location.path('#/');
+        			$rootScope.islogged=false;
+        			
+        		}else{
+        			alert("error")
+        		}
+        	})
+        }
+    }
