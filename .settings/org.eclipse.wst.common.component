@@ -4,6 +4,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/" source-path="/WebContent/html"/>
         <wb-resource deploy-path="/" source-path="/WebContent/js"/>
+        <wb-resource deploy-path="/" source-path="/WebContent/lib"/>
         <property name="context-root" value="Frontendcollab"/>
         <property name="java-output-path" value="/Frontendcollab/build/classes"/>
     </wb-module>

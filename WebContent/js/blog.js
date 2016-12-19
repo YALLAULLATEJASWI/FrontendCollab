@@ -53,7 +53,7 @@ Simple blog front end demo in order to learn AngularJS - You can add new posts, 
 
 
 var blogapp = angular.module('blogApp',[]);
-blogapp.controller('blogcntrl', [ '$scope', '$http', function($scope, $http) {
+blogapp.controller('blogcntrl', [ '$scope', '$http', '$location','$rootScope',function($scope, $http,$location,$rootScope) {
 	var BASE_URL = 'http://localhost:808/CollabServer';
 	console.log("blog");
 	$scope.getAllBlogs= function() {
@@ -105,5 +105,30 @@ blogapp.controller('blogcntrl', [ '$scope', '$http', function($scope, $http) {
 		$scope.id=id;
 		$scope.title=title;
 		$scope.content=content;
+		console.log('edited blog');
+	}
+	$scope.getblog=function(id){
+		  
+		  console.log("iblog")
+		  $http({
+		   method: "GET",
+		   url:BASE_URL+'/iblog/'+id,
+		  }).success(function(data,status,headers,config){
+		   $location.path('/iblog');
+		   $rootScope.individualblogs=data;
+		   console.log(data)
+		  }).error(function(data, status, headers, config) {
+		   alert("Error");
+		  });
+		 }
+	$scope.like=function(id){
+		$http({
+			method : 'POST',
+			url : BASE_URL + '/likeblog/'+id,
+		}).success(function(data, status, headers, config) {
+			alert("success")
+			console.log('liked');
+		})
+		
 	}
 	        }]);

@@ -1,4 +1,4 @@
-console.log("app")
+
 var app = angular.module('chatApp',[]);
 app.controller("chatController",function($scope,ChatService){
 	console.log("chatctrl")

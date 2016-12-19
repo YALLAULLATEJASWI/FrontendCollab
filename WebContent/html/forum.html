@@ -69,14 +69,14 @@
     <div class="row">
      <div class="span3">
       <div class="well">
-       <h2 class="text-info">{{forum.name}}</h2>
+       <h2 class="text-info"><a href="" data-ng-click="getforum(forum.id)">{{forum.name}}</a></h2>
        <p>
         <span class="label label-info"><font size="3">{{forum.topic}}</font></span>
        </p>
        <hr>
        <p>{{forum.description}}</p>
        <hr>
-       <p><button data-ng-click="deleteforum(forum.id,forum.name,forum.topic,forum.description)">edit</button>
+       <p><button data-ng-click="editforum(forum.id,forum.name,forum.topic,forum.description)">edit</button>
         <button data-ng-click="deleteforum(forum.id)" class="btn btn-primary btn-danger">delete</button>
       </div>
      </div>

@@ -1,5 +1,5 @@
 var app = angular.module('forumApp',[]);
-app.controller('Forumcontroller', [ '$scope', '$http', function($scope, $http) {
+app.controller('Forumcontroller', [ '$scope', '$http','$location','$rootScope', function($scope, $http,$location,$rootScope) {
  var BASE_URL = 'http://localhost:808/CollabServer';
  $scope.getAllForum= function() {
   console.log("get all forum")
@@ -8,26 +8,26 @@ app.controller('Forumcontroller', [ '$scope', '$http', function($scope, $http) {
    url : BASE_URL+'/forum'
   }).success(function(data, status, headers, config) {
    $scope.forums=data;
-   console.log("heloooooo");
    //alert(data); 
   }).error(function(data, status, headers, config) {
    alert("Error");
   });
  };
  $scope.submit = function() {
-  $scope.forum = { 
+  $scope.forum = {
+   id:$scope.id,
    name : $scope.name,
    topic:$scope.topic,
    userid:$scope.userid,
    doc: $scope.doc,
    description:$scope.description
   }
-  console.log("forumssssssss");
   $http({
    method : 'POST',
    url : BASE_URL + '/createforum',
    data : $scope.forum
   }).success(function(data, status, headers, config) {
+   $scope.id='';
    $scope.name='';
    $scope.topic='';
    $scope.userid='';
@@ -38,6 +38,7 @@ app.controller('Forumcontroller', [ '$scope', '$http', function($scope, $http) {
   });
  };
  $scope.deleteforum=function(id){
+  console.log("deleteforum")
   $http({
    method:'DELETE',
   url:BASE_URL+'/deleteforum/'+id
@@ -45,4 +46,27 @@ app.controller('Forumcontroller', [ '$scope', '$http', function($scope, $http) {
    $scope.getAllForum();
   })
  };
+ 
+ $scope.editforum=function(id,name,topic,description){
+  console.log("editforum")
+  $scope.id=id;
+  $scope.name=name;
+  $scope.topic=topic
+  $scope.description=description;
+  }
+ 
+$scope.getforum=function(id){
+  
+  console.log("iforum")
+  $http({
+   method: "GET",
+   url:BASE_URL+'/iforum/'+id,
+  }).success(function(data,status,headers,config){
+   $location.path('/iforum');
+   $rootScope.individualforums=data;
+   console.log(data)
+  }).error(function(data, status, headers, config) {
+   alert("Error");
+  });
+ }
 }]);

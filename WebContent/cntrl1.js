@@ -1,10 +1,10 @@
-var app = angular.module('myApp', ['ngRoute','blogApp','forumApp','allusers','loginApp','registerApp','ngCookies','chatApp']);
+var app = angular.module('myApp',['ngRoute','blogApp','iforumApp','iblogApp','forumApp','allusers','loginApp','registerApp','ngCookies','chatApp']);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider,$locationProvider) {
   $routeProvider
   
-  .when("/Index1", {
-      templateUrl : "Index1.html",
+  .when('/Index1', {
+      templateUrl : 'Index1.html',
       controller:'LoginController',
   	controllerAs:'vm'
   })
@@ -13,9 +13,13 @@ app.config(function($routeProvider) {
     templateUrl : 'html/blog.html',
     controller  : 'blogcntrl'
  })
+  .when('/iblog',{
+    	templateUrl: 'html/iblog.html',
+	controller: 'commentsblog'
+    })
  
- .when("/login",{
-    	templateUrl:"html/login.html",
+ .when('/login',{
+    	templateUrl:'html/login.html',
     	controller:'LoginController',
     	controllerAs:'vm'
  })
@@ -23,14 +27,22 @@ app.config(function($routeProvider) {
     templateUrl : 'html/register.html',
     controller  : 'Registercontroller'
  })
-.when("/chat",{
-    	templateUrl: "html/chat.html",
+ .when('/UserProfile', {
+    templateUrl : 'html/UserProfile.html',
+    controller  : 'Registercontroller'
+ })
+.when('/chat',{
+    	templateUrl: 'html/chat.html',
     	controller: "chatController",
     })
  .when('/forum', {
     templateUrl : 'html/forum.html',
     controller  : 'Forumcontroller'
  })
+  .when('/iforum',{
+    	templateUrl: 'html/iforum.html',
+	controller: 'commentsforum'
+    })
  .when('/friend', {
     templateUrl : 'html/friend.html',
     controller  : 'alluserctrl'

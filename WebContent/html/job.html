@@ -3,8 +3,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular-route.min.js"></script>
 </head>
 <body>
+<body data-ng-app="allusers">
+<div data-ng-controller="allfriendsctrl">
+<div data-ng-init="getmyfriends()">
+<div data-ng-repeat="myfriend in myfriends">
 
 </body>
 </html>
