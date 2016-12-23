@@ -1,3 +1,4 @@
+var app=angular.module('allusers',[]);
 
 app.controller('allfriendsctrl',['$scope','$http',function($scope,$http){
 	var BASE_URL = 'http://localhost:808/CollabServer';

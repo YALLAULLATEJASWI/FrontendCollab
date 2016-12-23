@@ -10,16 +10,31 @@
 <script type="text/javascript" src="js/chat.js"></script>
 <script type="text/javascript" src="js/chatservice.js"></script>
 </head>
+
+<style>
+
+
+ div.margin{
+ margin-left:300px;
+ margin-top:50px;
+ 
+ }
+</style>
+
 <body data-ng-app="chatApp">
 <div data-ng-controller="chatController">
+<div class="margin">
 <form data-ng-submit="addMessage()" name="messageForm">
+
 <input type="text" placeholder="Enter new Message" data-ng-model="message">
 <input type="submit" value="send">
 </form>
+</div>
 <p data-ng-repeat="message in messages | orderBy:'time':true" >
 <time>{{message.time | date:'HH:mm'}}</time>
 <span >{{message.message}}</span>
 </p>
 </div>
+
 </body>
 </html>

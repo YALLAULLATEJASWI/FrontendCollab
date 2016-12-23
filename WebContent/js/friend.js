@@ -1,4 +1,4 @@
-var app=angular.module('allusers',[]);
+var app=angular.module('friendApp',[]);
 app.controller('alluserctrl',['$scope','$http',function($scope,$http){
 	var BASE_URL = 'http://localhost:808/CollabServer';
 	$scope.getAllUsers= function() {

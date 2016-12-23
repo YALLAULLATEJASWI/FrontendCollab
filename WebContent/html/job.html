@@ -3,14 +3,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<script type="text/javascript" src="lib/angular.min.js"></script>
-<script type="text/javascript" src="lib/angular-route.min.js"></script>
 </head>
-<body>
-<body data-ng-app="allusers">
-<div data-ng-controller="allfriendsctrl">
-<div data-ng-init="getmyfriends()">
-<div data-ng-repeat="myfriend in myfriends">
+<body data-ng-app="jobApp">
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Company</th>
+        <th>Job Details</th>
+        <th>Last Date</th>
+      </tr>
+    </thead>
+    <tbody data-ng-init="getjobs()">
+      <tr  data-ng-repeat="job in jobs | filter:search">
+         <td>{{job.title}}</td>
+        <td>{{job.company}}</td>
+        <td>{{job.jobdetails}}</td>
+        <td>{{job.lastdate | date:'dd/MM/yyyy'}}</td>
+      </tr>
+      </tbody>
+      </table>
 
 </body>
 </html>

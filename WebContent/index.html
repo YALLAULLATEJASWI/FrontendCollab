@@ -1,4 +1,109 @@
-<!-- <!DOCTYPE html>
+<!--  <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+
+
+<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular-route.min.js"></script>
+<script type="text/javascript" src="lib/angular-cookies.js"></script>
+
+<link rel="stylesheet" href="resources/login.css">
+<link rel="stylesheet" href="resources/register.css">
+<link rel="stylesheet" href="resources/search.css">
+<link rel="stylesheet" href="resources/user.css">
+<link rel="stylesheet" href="resources/comments.css">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+
+
+<script src="cntrl1.js"></script>
+<script src="js/register.js"></script>
+<script src="js/login.js"></script>
+<script src="js/loginservice.js"></script>
+<script src="js/chatservice.js"></script>
+
+<script src="js/chat.js"></script>
+<script src="js/blog.js"></script>
+<script src="js/blogcommentscntrl.js"></script>
+<script src="js/forum.js"></script>
+<script src="js/friend.js"></script>
+<script src="js/allfriends.js"></script>
+<script src="js/commentscntrl.js"></script>
+<script src="js/job.js"></script>
+
+ 
+</head>
+
+<body data-ng-app="myApp">
+	<p>
+		<a href="#/">Main</a>
+	</p>
+
+	<a href="#/login">Login</a>
+	<a href="#/register">Register</a>
+	<a href="#/blog">Blog</a>
+	<a href="#/chat">Chat</a>
+	<a href="#/forum">Forum</a>
+	<a href="#/friend">Friend</a>
+	<a href="#/UserProfile">MyProfile</a>
+	
+	
+	
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand " style="color: white">Zusammenarbeit</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+				<li><a href="#/login">Login</a></li>
+		        <li><a href="#/register">Register</a></li>
+			     <li><a href="#/blog">Blog</a></li>
+				<li><a href="#/chat">Chat</a></li>
+				<li><a href="#/forum">Forum</a></li>
+				<li><a href="#/friend">Friend</a></li>
+				<li><a href="#/UserProfile">MyProfile</a></li>
+				 <li><a href="#/job">Find Jobs</a></li>
+							
+		
+     <li><a href="#/register" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-user"></i></a></li>
+     <li><a href="#/login" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-log-in"></i></a></li>
+     <li style="padding-top:15px;" data-ng-show="globals.currentUser.islogged">Welcome:{{globals.currentUser.username}}</li>
+    <li data-ng-show="globals.currentUser.islogged"><a href="" data-ng-click="vm.logout()">logout</a></li>
+    </ul> 
+			</div>
+		</div>
+	</nav>
+    
+	<div data-ng-view></div>
+	
+	
+	<nav class="navbar navbar-inverse navbar-fixed-bottom ">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand " style="color: white"><i
+					class="fa fa-copyright" aria-hidden="true"></i> Copyright 2016</a>
+			</div>
+		</div>
+	</nav>
+
+</body>
+</html>  -->
+
+ 
+ 
+ 
+
+ <!-- <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -63,7 +168,6 @@
  
  
  
-
  <!-- <!DOCTYPE html>
 <html>
 <head>
@@ -160,6 +264,9 @@
         <link rel="stylesheet" type="text/css" href="resources/css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="resources/css/color/yellow.css">
 	
+	
+	
+	
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -168,6 +275,12 @@
 <script type="text/javascript" src="lib/angular.min.js"></script>
 <script type="text/javascript" src="lib/angular-route.min.js"></script>
 <script type="text/javascript" src="lib/angular-cookies.js"></script>
+
+<link rel="stylesheet" href="resources/login.css">
+<link rel="stylesheet" href="resources/register.css">
+<link rel="stylesheet" href="resources/search.css">
+<link rel="stylesheet" href="resources/user.css">
+<link rel="stylesheet" href="resources/comments.css">
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
@@ -186,10 +299,13 @@
 <script src="js/forum.js"></script>
 <script src="js/friend.js"></script>
 <script src="js/allfriends.js"></script>
-<script src="js/commentscntrl.js"></script> 
-        
+<script src="js/commentscntrl.js"></script>
+<script src="js/job.js"></script>
+
+ 
 </head>
-<body >
+
+<body data-ng-app="myApp">
 <!-- [ LOADERs ]
 ================================================================================================================================	
  -->    <div class="preloader">
@@ -226,15 +342,17 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#home" class="page-scroll">Home</a></li>
-            <li><a href="#login" class="page-scroll">Login</a></li>
-            <li><a href="#register" class="page-scroll">Register</a></li>
-            <li><a href="#teams" class="page-scroll">Team</a></li>
-            <li><a href="#portfolio" class="page-scroll">Portfolio</a></li>
-            <li><a href="#testimonial-s" class="page-scroll">Testimonials</a></li>
-            <li><a href="#contact" class="page-scroll">Contact</a></li>
+            <li><a href="#/login" class="page-scroll">Login</a></li>
+            <li><a href="#/register" class="page-scroll">Register</a></li>
+            <li><a href="#/blog" class="page-scroll">Blog</a></li>            
+            <li><a href="#/forum" class="page-scroll">Forum</a></li>
+            <li><a href="#/chat" class="page-scroll">Chat</a></li>
+            <li><a href="#/friend" class="page-scroll">Friend</a></li>
+            <li><a href="#/UserProfile" class="page-scroll">MyProfile</a></li>
+ <li><a href="#/job" class="page-scroll">Find Jobs</a></li> 
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+        </div>
+      </div>
     </nav>
 
 
@@ -251,7 +369,7 @@
                    <h1 class="text-capitalize"> <strong>Zusammen<span class="themecolor">arbeit</span></strong></h1>
                <p class="lead">Alone we are <strong> SMART </strong> and Together we are <strong> BRILLIANT</strong></p>
                 </div>
-                 <a href="#about" class="fa fa-angle-down page-scroll"></a>
+                 <a href="#start" class="fa fa-angle-down page-scroll"></a>
             </div>
             
         </div>
@@ -300,7 +418,8 @@
      </div>     
  </section> -->
 
- <section data-ng-app="loginApp" class="login white-background black" id="login">
+ <!-- <section data-ng-app="loginApp">
+ <div class="login white-background black" id="login">
 <div data-ng-controller="LoginController">
 {{islogged}}</div>
  <div class="wrapper">
@@ -316,9 +435,9 @@
     </form>
    
   </div>
+</div>
 
-
-</section>
+</section> -->
  <!-- 
  [/ABOUTUS]
  ============================================================================================================================
@@ -368,9 +487,9 @@
                 </div>
      
  </div>    
- </section> -->
- 
- <section data-ng-app="registerApp" class="our-services theme_background_color white text-center" id="register" text="centers"> 
+ </section>
+  -->
+ <!-- <section data-ng-app="registerApp" class="our-services theme_background_color white text-center" id="register" text="centers"> 
   
   
   <div class="container" >
@@ -383,7 +502,7 @@
     
       </div>
   
-  <!-- <script type="text/ng-template" id="login.html"> -->
+  <script type="text/ng-template" id="login.html">
     <div class="col-md-12">
     
       <div class="col-md-4">
@@ -419,17 +538,17 @@
       </div>
     </div>
     </div>
-</section>
+</section> -->
  
-
  
-<!-- [/SERVICES]
+<!--  
+[/SERVICES]
  ============================================================================================================================
  
   [OUR TEAM]
  ============================================================================================================================
  -->
-<section class="our-team text-center" id="teams">
+<!-- <section class="our-team text-center" id="teams">
     <div class="overlay">
             <div class="container">
                 <div class="sectionTitle center">
@@ -483,56 +602,11 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="resources/images/team/04.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Ramshad Jen</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
-                            </div>
-                        </div>
                     </div>
+                    </div></div>
 
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="resources/images/team/01.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Ramshad Jen</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="resources/images/team/02.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Ramshad Jen</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="resources/images/team/03.jpg" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>Ramshad Jen</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
      
- </section>
+ </section> -->
  <!--[/OUR TEAM]
  ============================================================================================================================
  
@@ -541,16 +615,20 @@
  
  [PORTFOLIO]
  ============================================================================================================================-->
+<section id="start">
+
+ <div data-ng-view></div></section>
+ 
  <section class="portfolio white-background black" id="portfolio">
  <div class="container">
  <div class="row">
       <div class="sectionTitle text-center  col-md-12">
-                <h2>Take a look at <strong>our works</strong></h2>
+                <h2>Take a look at <strong>our Team</strong></h2>
                 <div class="line grey_background_color">
                   
                 </div>
                 <div class="clearfix"></div>
-                <p class="intro">Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+                <p class="intro">Talent wins games, but teamwork and intelligence wins championships.</p>
             </div>
      <div class="gap"></div>
      
@@ -563,7 +641,7 @@
                             <li><a href="#" data-filter="*" class="active">All</a></li>
                             <li><a href="#" data-filter=".web">Web Design</a></li>
                             <li><a href="#" data-filter=".photography">Photography</a></li>
-                            <li><a href="#" data-filter=".app" >Mobile App</a></li>
+                            <li><a href="#" data-filter=".app" >App</a></li>
                             <li><a href="#" data-filter=".branding" >Branding</a></li>
                         </ol>
                     </li>
@@ -583,7 +661,7 @@
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
-                                <img src="resources/images/portfolio/01.jpg" class="img-responsive" alt="...">
+                                <img src="resources/images/portfolio/DSC_0090.png" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
@@ -599,7 +677,7 @@
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
-                                <img src="resources/images/portfolio/02.jpg" class="img-responsive" alt="...">
+                                <img src="resources/images/portfolio/DSC_0816.JPG" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
@@ -615,7 +693,7 @@
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
-                                <img src="resources/images/portfolio/03.jpg" class="img-responsive" alt="...">
+                                <img src="resources/images/portfolio/DSC_0387.JPG" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
@@ -631,7 +709,7 @@
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
-                                <img src="resources/images/portfolio/04.jpg" class="img-responsive" alt="...">
+                                <img src="resources/images/portfolio/DSC_0654.JPG "class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
@@ -647,7 +725,7 @@
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
-                                <img src="resources/images/portfolio/05.jpg" class="img-responsive" alt="...">
+                                <img src="resources/images/portfolio/DSC_0817.JPG " class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
@@ -663,7 +741,7 @@
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
-                                <img src="resources/images/portfolio/06.jpg" class="img-responsive" alt="...">
+                                <img src="resources/images/portfolio/DSC_0553.JPG" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
@@ -679,7 +757,7 @@
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
-                                <img src="resources/images/portfolio/07.jpg" class="img-responsive" alt="...">
+                                <img src="resources/images/portfolio/DSC_0044.JPG" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
@@ -695,7 +773,7 @@
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
-                                <img src="resources/images/portfolio/08.jpg" class="img-responsive" alt="...">
+                                <img src="resources/images/portfolio/12074981_901184553263314_6494683603382872371_n.jpg" style="height:178px;width:300px" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
@@ -761,6 +839,8 @@
  
  [TESTIMONIAL]
  ============================================================================================================================-->
+ 
+ <!-- 
  <section class="client-testimonial text-center black-background grey" id="testimonial-s">
   
             <div class="container">
@@ -796,7 +876,7 @@
      
      
  </section> 
- <!--[/TESTIMONIAL]
+ --> <!--[/TESTIMONIAL]
  ============================================================================================================================
  
  
@@ -860,10 +940,10 @@
             </div>
             <div class="pull-right fnav">
                 <ul class="footer-social">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#https://plus.google.com/u/0/"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="https://twitter.com/yallaulla"><i class="fa fa-twitter"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -881,22 +961,22 @@
 <!--[ /WRAPPER ]
 =============================================================================================================================-->
 
-	[ DEFAULT SCRIPT ]
+	<!-- [ DEFAULT SCRIPT ] -->
 
 	<script src="resources/library/modernizr.custom.97074.js"></script>
 	<script src="resources/library/jquery-1.11.3.min.js"></script>
         <script src="resources/library/bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="resources/js/jquery.easing.1.3.js"></script>	
-	[ PLUGIN SCRIPT ]
+	<!-- [ PLUGIN SCRIPT ] -->
         <script src="resources/library/vegas/vegas.min.js"></script>
 	<script src="resources/js/plugins.js"></script>
-	[ SLIDER SCRIPT ]  
+	<!-- [ SLIDER SCRIPT ] -->  
         <script src="resources/js/owl.carousel.js"></script> 
         <script type="text/javascript" src="resources/js/SmoothScroll.js"></script>
-        [ PORTFOLIO SCRIPT ]
+        <!-- [ PORTFOLIO SCRIPT ] -->
         <script type="text/javascript" src="resources/js/jquery.isotope.js"></script>
 	<script src="resources/js/slider.js"></script>
-        [ COMMON SCRIPT ]
+       <!--  [ COMMON SCRIPT ] -->
 	<script src="resources/js/common.js"></script>
         
         
@@ -914,4 +994,4 @@
 
 
 
-</html>
+</html> 
